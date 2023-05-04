@@ -2,30 +2,59 @@ export let main = [{
         name: "Create New Car",
         identifier: 'N',
         callback: "createNew",
-        description: "Create a new recipe from scratch"
+        action: 'mainMenu',
+        description: "Add a new car to the Database"
     },
     {   
-        name: "Get this Car",
-        identifier: 'G', 
-        callback: "getList",
+        name: "Select a Car",
+        identifier: 'S', 
+        callback: "selectCar",
+        action: "carsMenu",
         description: "Returns the select car from Database"
     },
     {
         name: "Delete Car",
         identifier: "D", 
-        callback: "deleteCar", 
+        callback: "deleteCar",
+        action: 'carsMenu',
         description: "Deletes selected car from Database"
     },
     {
         name: "Display All Car", 
         identifier: "A",
         callback: "allCars",
+        action: 'mainMenu',
         description: "Show all cars in the Database"
     },
     {
         name: "Exit Program", 
         identifier: "X", 
         callback: "exitProgram", 
-        description: "What can I, Stop it! Really!"
+        action: 'none',
+        description: "Wait, What? can I do what?, No, Stop it! Really!"
     }
 ];
+
+export let cars = [
+    {
+        name: "Select Car", 
+        identifier: "S", 
+        callback: 'selectCar',
+        action: "mainMenu", 
+        description: "Select the car from the Database"
+    },
+    { 
+        name: "Edit Car", 
+        identifier: "E",
+        callback: "editCar",
+        action: "mainMenu",
+        description: "Edit car information"
+    },
+    {
+        name: "Back to Main Menu", 
+        identifier: "B", 
+        callback: "goBack", 
+        action: "mainMenu",
+        description: "Return to the previous menu"
+    }
+]

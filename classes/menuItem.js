@@ -1,9 +1,10 @@
 
 export class MenuItem { 
-    constructor(name, identifier, callback, description) { 
+    constructor(name, identifier, callback, action, description) { 
         this.name = name; 
         this.identifier = identifier; 
         this.callback = callback;
+        this.action = action;
         this.description = description; 
     }
 

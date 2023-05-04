@@ -1,24 +1,41 @@
-import { MenuItems } from '../classes/menuItems.js'; 
-import { main } from '../modules/menuDataStructure.js';
+import { MainMenu } from '../classes/mainmenu.js';
+import { CarsMenu } from '../classes/carsmenu.js';
+import { main, cars } from '../modules/menuDataStructure.js';
 
-function display(menu) { 
-    return prompt(menu);
-}
 
-let mainMenu = new MenuItems('main', 'top'); 
+
+let mainMenu = new MainMenu('main', 'top'); 
 mainMenu.addFromFile(main); 
+
+let carsMenu = new CarsMenu('cars', 'submenu'); 
+carsMenu.addFromFile(cars);
+
 
 let selectedMenu = '!';
 let selectedMenuOptions = mainMenu;
 
-while (selectedMenu !== 'X') {
-    selectedMenuOptions.getMenuItems().forEach(menu => {
+function menuSwitch(action) { 
+    if (action === 'mainMenu') {
+        selectedMenuOptions = mainMenu; 
+    } else if (action === 'carsMenu') {
+        selectedMenuOptions = carsMenu;
+    }
+}
 
+
+
+while (selectedMenu !== '?') {
+
+    selectedMenu = selectedMenuOptions.displayMenu();
+
+    selectedMenuOptions.getMenuItems().forEach(menu => {
         if (selectedMenu.toUpperCase() === menu.identifier) { 
+            selectedMenuOptions.selectedMenuItem = menu;
             selectedMenuOptions.handleCallBack(menu.callback);
+            menuSwitch(menu.action); 
         }
     })
-   selectedMenu = display(selectedMenuOptions.displayMenu());   
+      
 };
 alert("Program exited");
 
