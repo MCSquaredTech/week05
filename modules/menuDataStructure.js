@@ -1,26 +1,26 @@
 export let main = [{
         name: "Create New Car",
         identifier: 'N',
-        callback: "createNew()",
+        callback: "createNew",
         description: "Create a new recipe from scratch"
     },
     {   
-        name: "Get Recipe List",
+        name: "Get this Car",
         identifier: 'G', 
-        callback: "getList()",
-        description: "Returns all recipes from Database"
+        callback: "getList",
+        description: "Returns the select car from Database"
     },
     {
         name: "Delete Car",
         identifier: "D", 
         callback: "deleteCar", 
-        description: "Deletes selected car from list"
+        description: "Deletes selected car from Database"
     },
     {
         name: "Display All Car", 
         identifier: "A",
         callback: "allCars",
-        description: "Show all cars in the list"
+        description: "Show all cars in the Database"
     },
     {
         name: "Exit Program", 

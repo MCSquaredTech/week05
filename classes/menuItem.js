@@ -16,8 +16,4 @@ export class MenuItem {
         return this.description;
     }
 
-    getCallback() { 
-        return this.callback;
-    }
-
 }
