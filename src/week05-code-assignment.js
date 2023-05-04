@@ -10,14 +10,22 @@ let selectedMenuOptions = mainMenu;
 
 while (selectedMenu !== 'X') {
     selectedMenuOptions.getMenuItems().forEach(menu => {
-
-        if (selectedMenu === menu.identifier) { 
+        if (selectedMenu.toUpperCase() === menu.identifier) { 
+            console.log(menu.callback);
             menu.callback;
         }
     })
    selectedMenu = display(selectedMenuOptions.displayMenu());   
 };
 
+function createNew() {
+    console.log('Create a new dish')
+}
+
+function getList() {
+    console.log('Get the list of dishes');
+    return 'S';
+}
 
 function display(menu) { 
     return prompt(menu);

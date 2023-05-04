@@ -21,6 +21,10 @@ export class MenuItems {
 
     }
 
+    getCallbackFunction() { 
+        return this.callback;
+    }
+
     getMenuItems() { 
         return this.selector;
     }
