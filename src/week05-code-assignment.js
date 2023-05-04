@@ -33,11 +33,12 @@ while (selectedMenu !== '?') {
             selectedMenuOptions.selectedMenuItem = menu;
             selectedMenuOptions.handleCallBack(menu.callback);
             menuSwitch(menu.action); 
+            selectedMenu = menu.identifier === 'X' ? '?' : menu.identifier;
         }
     })
       
 };
-alert("Program exited");
+
 
 
 

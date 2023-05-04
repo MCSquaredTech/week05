@@ -21,20 +21,17 @@ export class MenuItems {
 
     }
 
-    getCallbackFunction() { 
-        return this.callback;
-    }
+    // getCallbackFunction() { 
+    //     return this.callback;
+    // }
 
     getMenuItems() { 
         return this.selector;
     }
 
     displayMenu() {
-        let menuLook = ''; 
-        this.selector.forEach(mi => {
-            menuLook += mi.displayMenuItem();
-        })
-        return prompt(menuLook);
+       // Virtual function to be implement in Child 
+       throw new Error('Must Implement at calling class');
     }
 
     handleCallBack(action) { 

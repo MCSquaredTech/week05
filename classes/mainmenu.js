@@ -5,6 +5,14 @@ export class MainMenu extends MenuItems {
         super(name, level); 
     }
 
+    displayMenu() {
+        let menuLook = ''; 
+        this.selector.forEach(mi => {
+            menuLook += mi.displayMenuItem();
+        })
+        return prompt(menuLook);
+    }
+
     handleCallBack(action) { 
         switch (action) {
             case 'createNew':
@@ -44,6 +52,6 @@ export class MainMenu extends MenuItems {
 
     exitProgram() { 
         alert(this.selectedMenuItem.description);
-        return '?';
+        this.selectedMenuItem.selectedMenuItem = '?';
     }
 }

@@ -1,3 +1,9 @@
+// Menu Item Class - Object to hold a single Menu Item - I know it's a word salad. 
+// name is the Name of the Menu Item 
+// identifier is the Menu response key 
+// callback is the trigger for the response key 
+// action is a menu navigation 
+// description of the menu item 
 
 export class MenuItem { 
     constructor(name, identifier, callback, action, description) { 
@@ -8,13 +14,9 @@ export class MenuItem {
         this.description = description; 
     }
 
+    // display format of the menu item
     displayMenuItem() { 
         // console.log(`${this.identifier}) ${this.name} \n`);
         return `${this.identifier} - ${this.name} \n`;
     }
-
-    getDescription() {
-        return this.description;
-    }
-
 }
