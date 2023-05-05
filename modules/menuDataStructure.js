@@ -9,21 +9,21 @@ export let main = [{
         name: "Select a Car",
         identifier: 'S', 
         callback: "selectCar",
-        action: "carsMenu",
+        action: "mainMenu",
         description: "Returns the select car from Database"
     },
     {
         name: "Delete Car",
         identifier: "D", 
         callback: "deleteCar",
-        action: 'carsMenu',
+        action: 'mainMenu',
         description: "Deletes selected car from Database"
     },
     {
         name: "Display All Car", 
         identifier: "A",
         callback: "allCars",
-        action: 'mainMenu',
+        action: 'carsMenu',
         description: "Show all cars in the Database"
     },
     {

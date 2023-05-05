@@ -1,13 +1,15 @@
 import { MainMenu } from '../classes/mainmenu.js';
 import { CarsMenu } from '../classes/carsmenu.js';
 import { main, cars } from '../modules/menuDataStructure.js';
+import { Cars } from '../classes/cars.js';
 
 
+let newCars = new Cars();
 
-let mainMenu = new MainMenu('main', 'top'); 
+let mainMenu = new MainMenu('main', 'top', newCars); 
 mainMenu.addFromFile(main); 
 
-let carsMenu = new CarsMenu('cars', 'submenu'); 
+let carsMenu = new CarsMenu('cars', 'submenu', newCars); 
 carsMenu.addFromFile(cars);
 
 

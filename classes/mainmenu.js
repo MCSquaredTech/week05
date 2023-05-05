@@ -1,8 +1,12 @@
 import { MenuItems } from './menuItems.js'; 
+import { Cars } from './cars.js';
+import { Car } from './car.js'
 
 export class MainMenu extends MenuItems { 
-    constructor (name, level)  { 
+    constructor (name, level, cars)  { 
         super(name, level); 
+        this.carObject = cars; 
+        this.carObject.selectedCar = null;
     }
 
     displayMenu() {
@@ -34,20 +38,40 @@ export class MainMenu extends MenuItems {
     }
 
     createNewCar() {
-        console.log('newCar')
-        console.log(this.selectedMenuItem.description);
+        let year = prompt('Enter the year of the car'); 
+        let make = prompt("Enter the car's make"); 
+        let model = prompt("Enter the car's model"); 
+        let mileage = prompt('Enter current mileage');
+        let description = prompt("Enter description"); 
+
+        let car = new Car(year, make, model, mileage, description); 
+        this.carObject.add(car); 
+        this.carObject.selectedCar = car;
     }
     
     selectCar() {
-        console.log(this.selectedMenuItem.description);
+        console.log(this.carObject.selectedCar);
+        if (this.carObject.selectedCar !== null) { 
+            prompt(this.carObject.selectedCar.display());
+        } else {
+            this.allCars();
+        }
     }
 
     deleteCar() { 
-        console.log(this.selectedMenuItem.description); 
+        let index = this.carObject.carCollection.indexOf(this.carObject.selectedCar);
+        console.log(index);
+        if (this.carObject.selectedCar !== null) { 
+            this.carObject.carCollection.slice(index, 1);
+            this.carObject.selectedCar = null;
+        } else {
+            this.allCars();
+        }
     }
 
     allCars() { 
-        console.log(this.selectedMenuItem.description); 
+        
+        console.log('Hello, Now Show me some cars');
     }
 
     exitProgram() { 
