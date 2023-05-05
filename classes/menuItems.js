@@ -1,5 +1,23 @@
 import { MenuItem } from "./menuItem.js"; 
 
+// menuitems.js Class Object MenuItems 
+// MenuItems is a collection of MenuItem and is an abstract class that 
+//      provides propties and methods for the inheritance class. 
+// MenuItems Properties: 
+//      name: the name of the Menu 
+//      selector: is the collection of menu item
+//      menuLevel: identifies if the menu is the main level or a sub menu 
+//      selectedMenuItem: is the current Item selected 
+// MenuItems Methods: 
+//      add(menuItem) add the menu item to the selector collection
+//      addFromFile(fileArray) dynamically populates the Menu 
+//      getMenuItems(): returns the current selected menu item
+//      displayMenu(): is a virtual function that must be created in the 
+//          child class. 
+//      handleCallBack(action): is a virtual method that must be created in
+//          the child class - this handle key pressed events and manages calls 
+//          to the menu methods in the child class. 
+
 export class MenuItems { 
 
     constructor(name, level) {

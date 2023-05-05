@@ -1,3 +1,6 @@
+// dynamic menu loading variable name is the menu and properties 
+// for the menu class - See menuitem.js - class MenuItem.
+
 export let main = [{
         name: "Create New Car",
         identifier: 'N',

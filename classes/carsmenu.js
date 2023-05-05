@@ -1,5 +1,20 @@
 import { MenuItems } from './menuItems.js'; 
-import { Cars } from './cars.js'; 
+
+// carsmenu.js class CarsMenu 
+// The Cars Menu inheriates for MenuItems - Abstract class
+// This encapsulates the cars menu with it's collection, properties, 
+//      and methods into a nice little package.
+// CarsMenu Properties: 
+// From the super class requires name and level to be passed in. 
+// See MenuItem class for properties and methods.
+// carObjct: cars is the cars object or working object that will contain our data
+// CarsMenu Methods: 
+// displayMenu is a virtual class from MenuItems that must be implemented.
+//      This provides the look and feel of the menu. for Cars 
+// handleCallBack(action) is a virtual class from MenuItem that must be implemented.
+//      The handleCallBack recieves key press message from the entry point, and 
+//      applies the necessary responses. 
+// supporting methods are called from the handler class.
 
 export class CarsMenu extends MenuItems { 
     constructor (name, level, cars)  { 
@@ -41,6 +56,9 @@ export class CarsMenu extends MenuItems {
         }
     }
 
+    // Supporting methods 
+    // ------------------------------------------------------
+    // selectCar provides a menu to select a specific car. 
     selectCar() { 
         let menuLook = '\n'; 
         let selected = ''
@@ -61,6 +79,7 @@ export class CarsMenu extends MenuItems {
         console.log(this.carObject.carCollection[index]);
     }
 
+    // editCar provides methods to correct errors on the car object.
     editCar() { 
         this.carObject.selectedCar.year = prompt('Edit Year?', this.carObject.selectedCar.year);
         this.carObject.selectedCar.make = prompt('Edit Make?', this.carObject.selectedCar.make);

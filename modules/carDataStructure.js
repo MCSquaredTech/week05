@@ -1,3 +1,5 @@
+// Seed data for the Car collection object. 
+
 export let cardata = [{
     year: 1954,
     make: 'Ford',
