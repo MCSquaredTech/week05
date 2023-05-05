@@ -61,8 +61,8 @@ export class MainMenu extends MenuItems {
     deleteCar() { 
         let index = this.carObject.carCollection.indexOf(this.carObject.selectedCar);
         console.log(index);
-        if (this.carObject.selectedCar !== null) { 
-            this.carObject.carCollection.slice(index, 1);
+        if (index > -1) { 
+            this.carObject.carCollection.splice(index, 1);
             this.carObject.selectedCar = null;
         } else {
             this.allCars();
@@ -71,7 +71,7 @@ export class MainMenu extends MenuItems {
 
     allCars() { 
         
-        console.log('Hello, Now Show me some cars');
+        // Moving to the car menu
     }
 
     exitProgram() { 

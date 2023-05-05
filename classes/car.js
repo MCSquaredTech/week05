@@ -6,18 +6,17 @@ export class Car {
         this.model = model; 
         this.mileage = mileage; 
         this.description = description;
-
-        this.currentCar = null; 
     }
 
     display() { 
-        return `Year: ${this.year} Make: ${this.make} Model: ${this.model} \n
-            mileage: ${this.mileage} \n
-            descripton: ${this.description} `;
+        return `
+    Year: ${this.year} Make: ${this.make} Model: ${this.model} 
+    Mileage: ${this.mileage} 
+    Descripton: ${this.description} `;
     }
 
     displayBreif() { 
-        return `Year: ${this.year} Make: ${this.make} Model: ${this.Model}`;
+        return `Year: ${this.year} Make: ${this.make} Model: ${this.model}`;
     }
 
 }

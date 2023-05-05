@@ -2,9 +2,11 @@ import { MainMenu } from '../classes/mainmenu.js';
 import { CarsMenu } from '../classes/carsmenu.js';
 import { main, cars } from '../modules/menuDataStructure.js';
 import { Cars } from '../classes/cars.js';
+import { cardata } from '../modules/carDataStructure.js';
 
 
 let newCars = new Cars();
+newCars.addFromFile(cardata)
 
 let mainMenu = new MainMenu('main', 'top', newCars); 
 mainMenu.addFromFile(main); 
@@ -23,6 +25,8 @@ function menuSwitch(action) {
         selectedMenuOptions = carsMenu;
     }
 }
+
+console.log(newCars.displayCars);
 
 
 

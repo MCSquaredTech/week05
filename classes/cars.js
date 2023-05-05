@@ -21,12 +21,12 @@ export class Cars {
     }
 
     displayCars() { 
-        let index = 0; 
         let cars = '';
-        carObject.carCollection.forEach(car => { 
-            cars += `${index} - ${this.car.displayBreif()} /n`;
-            i++;
-        })
+        for (let i = 0; i < this.carCollection.length; i++) {
+            let car = this.carCollection[i]; 
+            
+            cars += `\n ${i} - ${car.displayBreif()} `;
+        }
         return cars;
     }
 

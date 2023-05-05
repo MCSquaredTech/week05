@@ -6,21 +6,21 @@ export let main = [{
         description: "Add a new car to the Database"
     },
     {   
-        name: "Select a Car",
+        name: "Show Selected Car",
         identifier: 'S', 
         callback: "selectCar",
         action: "mainMenu",
         description: "Returns the select car from Database"
     },
     {
-        name: "Delete Car",
+        name: "Delete Selected Car",
         identifier: "D", 
         callback: "deleteCar",
         action: 'mainMenu',
         description: "Deletes selected car from Database"
     },
     {
-        name: "Display All Car", 
+        name: "Display All Cars", 
         identifier: "A",
         callback: "allCars",
         action: 'carsMenu',
@@ -40,14 +40,14 @@ export let cars = [
         name: "Select Car", 
         identifier: "S", 
         callback: 'selectCar',
-        action: "mainMenu", 
+        action: "carsMenu", 
         description: "Select the car from the Database"
     },
     { 
         name: "Edit Car", 
         identifier: "E",
         callback: "editCar",
-        action: "mainMenu",
+        action: "selectCar",
         description: "Edit car information"
     },
     {
