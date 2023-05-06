@@ -80,7 +80,7 @@ export class MainMenu extends MenuItems {
     //      the mainmenu.
     deleteCar() { 
         let index = this.carObject.carCollection.indexOf(this.carObject.selectedCar);
-        console.log(index);
+
         if (index > -1) { 
             this.carObject.carCollection.splice(index, 1);
             this.carObject.selectedCar = null;

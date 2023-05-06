@@ -81,11 +81,14 @@ export class CarsMenu extends MenuItems {
 
     // editCar provides methods to correct errors on the car object.
     editCar() { 
-        this.carObject.selectedCar.year = prompt('Edit Year?', this.carObject.selectedCar.year);
-        this.carObject.selectedCar.make = prompt('Edit Make?', this.carObject.selectedCar.make);
-        this.carObject.selectedCar.model = prompt('Edit Model?', this.carObject.selectedCar.model);
-        this.carObject.selectedCar.mileage = prompt('Edit Mileage?', this.carObject.selectedCar.mileage);
-        this.carObject.selectedCar.description = prompt('Edit Description?', this.carObject.selectedCar.description);
+        let index = this.carObject.carCollection.indexOf(this.carObject.selectedCar);
 
+        if (index > -1) {
+            this.carObject.selectedCar.year = prompt('Edit Year?', this.carObject.selectedCar.year);
+            this.carObject.selectedCar.make = prompt('Edit Make?', this.carObject.selectedCar.make);
+            this.carObject.selectedCar.model = prompt('Edit Model?', this.carObject.selectedCar.model);
+            this.carObject.selectedCar.mileage = prompt('Edit Mileage?', this.carObject.selectedCar.mileage);
+            this.carObject.selectedCar.description = prompt('Edit Description?', this.carObject.selectedCar.description);
+        }
     }
 }
