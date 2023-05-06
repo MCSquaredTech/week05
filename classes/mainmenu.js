@@ -70,7 +70,6 @@ export class MainMenu extends MenuItems {
     //  selectedCar - displays the current selected car. if no car is select it returns 
     //      to the mainmenu 
     selectedCar() {
-        console.log(this.carObject.selectedCar);
         if (this.carObject.selectedCar !== null) { 
             prompt(this.carObject.selectedCar.display());
         } 
